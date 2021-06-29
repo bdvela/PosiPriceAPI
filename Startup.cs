@@ -35,14 +35,7 @@ namespace PosiPrice.API
 
             services.AddControllers();
 
-            // DbContext Configuration
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"));
-                //options.UseMySQL(Configuration.GetConnectionString("AzureMySQLConnection"));
-
-            });
-
+        
             // Dependency Injection Configuration
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
